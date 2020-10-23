@@ -34,8 +34,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Backend', 'middleware' => ['a
         Route::get('profile/{id}', 'UserController@profile')->name('admin.user.profile');
         Route::get('delete/{id}', 'UserController@delete')->name('admin.user.delete');
 
+        Route::post('create', 'UserController@postCreate')->name('admin.user.postCreate');
         Route::post('update/{id}', 'UserController@postUpdate')->name('admin.user.postUpdate');
-    
+        Route::post('update-password/{id}', 'UserController@updatePassword')->name('admin.user.updatePassword');
+      
     });
  
 });

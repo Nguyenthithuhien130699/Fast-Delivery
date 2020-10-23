@@ -221,7 +221,7 @@
                             </form>
                         </div>
                         <div class="tab-pane fade" id="passwords" role="tabpanel" aria-labelledby="profile-tab2">
-                            <form method="post" class="needs-validation" action="">
+                            <form method="post" class="needs-validation" action="{{route('admin.user.updatePassword',$info['id'])}}">
                                 @csrf
 
                                 <div class="card-body">
@@ -240,7 +240,13 @@
                                     </div>
                                 </div>
                                 <div class="card-footer text-right">
-                                 
+                                    @if(Auth::user()->role == 'admin')
+                                    <button class="btn btn-primary">Cập nhật mật khẩu</button>
+                                    @elseif(Auth::user()->role == 'staff' && Auth::user()->id == $info['id'] )
+                                    <button class="btn btn-primary">Cập nhật mật khẩu</button>
+                                    @else
+                                    <button class="btn btn-primary" disabled>Bạn không có quyền Cập nhật mật khẩu</button>
+                                    @endif
 
                                 </div>
                             </form>
@@ -257,7 +263,7 @@
                                     </div>
                                 </div>
                                 <div class="card-footer text-right">
-                                  
+                                 
                                 </div>
                             </form>
                         </div>
