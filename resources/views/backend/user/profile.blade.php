@@ -252,7 +252,7 @@
                             </form>
                         </div>
                         <div class="tab-pane fade" id="avatars" role="tabpanel" aria-labelledby="profile-tab3">
-                            <form method="post" class="needs-validation" enctype="multipart/form-data" action="">
+                            <form method="post" class="needs-validation" enctype="multipart/form-data" action="{{route('admin.user.updateAvatar',$info['id'])}}">
                                 @csrf
                                 <div class="card-body">
                                     <div class="row">
@@ -263,7 +263,13 @@
                                     </div>
                                 </div>
                                 <div class="card-footer text-right">
-                                 
+                                    @if(Auth::user()->role == 'admin')
+                                    <button class="btn btn-primary">Cập nhật avatar</button>
+                                    @elseif(Auth::user()->role == 'staff' && Auth::user()->id == $info['id'] )
+                                    <button class="btn btn-primary">Cập nhật avatar</button>
+                                    @else
+                                    <button class="btn btn-primary" disabled>Bạn không có quyền Cập nhật avatar</button>
+                                    @endif
                                 </div>
                             </form>
                         </div>

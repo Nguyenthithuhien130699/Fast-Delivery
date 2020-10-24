@@ -11,10 +11,8 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-    public function uploadFile($file)
-    {
-
-        $fileName = time() . $file->getClientOriginalName();
+    public function uploadFile($file){
+        $fileName = time().$file->getClientOriginalName();
         $destinationPath = public_path('images');
         if ($file->isValid()) {
 
@@ -22,5 +20,10 @@ class Controller extends BaseController
             return $fileName;
         }
         return null;
+    }
+    public function deleteFile($fileName){
+        $destinationPath = public_path('images');
+        $fileLocation = $destinationPath.'/'.$fileName;
+        unlink($fileLocation);
     }
 }

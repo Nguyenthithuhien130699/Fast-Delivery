@@ -14,44 +14,38 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function index()
-    {
-        $data = User::where('role', 'customer')->get();
-        return view('backend.user.index', compact('data'));
+    public function index(){
+        $data = User::where('role','customer')->get();
+        return view('backend.user.index',compact('data'));
     }
-    public function staffList()
-    {
-        $data = User::where('role', 'staff')->get();
+    public function staffList(){
+        $data = User::where('role','staff')->get();
         $title = 'Danh Sách Shipper';
-        return view('backend.user.index', compact('data', 'title'));
+        return view('backend.user.index',compact('data','title'));
     }
-    public function seller()
-    {
-        $data = User::where('role', 'seller')->get();
+    public function seller(){
+        $data = User::where('role','seller')->get();
         $title = 'Danh Sách người bán hàng';
-        return view('backend.user.index', compact('data', 'title'));
+        return view('backend.user.index',compact('data','title'));
     }
-    public function profile($id)
-    {
+    public function profile($id){
         $info = User::findorFail($id);
         $transports = Transport::all();
-        return view('backend.user.profile', compact('info', 'transports'));
+        return view('backend.user.profile',compact('info','transports'));
     }
-    public function create()
-    {
+    public function create(){
         return view('backend.user.create');
     }
-    public function postCreate(CreateUser $request)
-    {
+    public function postCreate(CreateUser $request){
         $params = $request->all();
         unset($params['_token']);
         $file = $request->file('avatar');
-        dd($file);
-        $path = $file->getClientOriginalExtension();
-        $allow = ['jpg', 'png', 'jpeg'];
-        if (!in_array($path, $allow)) {
-            return back()->with('error', 'File upload phải là JPG, PNG', 'JPEG');
-        }
+       dd($file);
+       $path = $file->getClientOriginalExtension();
+       $allow = ['jpg','png','jpeg'];
+       if (!in_array($path,$allow)){
+           return back()->with('error','File upload phải là JPG, PNG', 'JPEG');
+       }
         $avatar = $this->uploadFile($file);
         $password = $request->get('password');
         $password = bcrypt($password);
@@ -59,64 +53,83 @@ class UserController extends Controller
         $params['avatar'] = $avatar;
 
         $create = User::create($params);
-        if ($create) {
+        if ($create){
             $type = 'success';
             $message = 'Tạo người dùng thành công';
-        } else {
+        }
+        else{
             $type = 'error';
             $message = 'Tạo người dùng thất bại';
         }
-        return back()->with($type, $message);
+        return back()->with($type,$message);
+
     }
-    public function postUpdate(Request $request, $id)
-    {
+    public function postUpdate(Request $request,$id){
         $params = $request->all();
         unset($params['_token']);
-        $update = $this->update($params, $id);
+        $update = $this->update($params,$id);
 
-        if ($update) {
+        if ($update){
             $type = 'success';
             $message = 'Cập nhật thành công';
-        } else {
+        }else{
             $type = 'error';
             $message = 'Cập nhật thất bại';
         }
 
-        return back()->with($type, $message);
+        return back()->with($type,$message);
     }
 
-    public function update($params, $id)
-    {
+    public function update($params,$id){
         $info = User::findOrFail($id);
         return $info->update($params);
     }
-    public function updatePassword(UpdatePassword $request, $id)
-    {
+    public function updatePassword(UpdatePassword $request,$id){
         $info = User::findOrFail($id);
         $password = $request->get('password');
         $password = bcrypt($password);
         $info->password = $password;
-        if ($info->save()) {
+        if ($info->save()){
             $type = 'success';
             $message = 'Cập nhật mật khẩu thành công';
-        } else {
+        }
+        else{
             $type = 'error';
             $message = 'Cập nhật mật khẩu thất bại';
         }
-        return back()->with($type, $message);
+        return back()->with($type,$message);
     }
-    
-    public function delete($id)
-    {
+    public function updateAvatar(UpdateAvatar  $request,$id ){
         $info = User::findOrFail($id);
-        if ($info->delete()) {
-            Bill::where('seller_id', $id)->delete();
+        $oldAvatar = $info['avatar'];
+        $file = $request->file('avatar');
+        $avatar = $this->uploadFile($file);
+        $info->avatar = $avatar;
+
+        if ($info->save()){
+            if ($oldAvatar != null) $this->deleteFile($oldAvatar);
+            $type = 'success';
+            $message = 'Cập nhật avatar thành công';
+        }
+        else{
+            $type = 'error';
+            $message = 'Cập nhật avatar thất bại';
+        }
+        return back()->with($type,$message);
+
+    }
+    public function delete($id){
+        $info = User::findOrFail($id);
+        if ($info->delete()){
+            Bill::where('seller_id',$id)->delete();
             $type = 'success';
             $message = 'Xóa thành công';
-        } else {
+        }
+        else{
             $type = 'error';
             $message = 'Xóa thất bại';
         }
-        return back()->with($type, $message);
+        return back()->with($type,$message);
+
     }
 }

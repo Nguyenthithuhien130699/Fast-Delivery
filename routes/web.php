@@ -37,6 +37,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Backend', 'middleware' => ['a
         Route::post('create', 'UserController@postCreate')->name('admin.user.postCreate');
         Route::post('update/{id}', 'UserController@postUpdate')->name('admin.user.postUpdate');
         Route::post('update-password/{id}', 'UserController@updatePassword')->name('admin.user.updatePassword');
+        Route::post('update-avatar/{id}', 'UserController@updateAvatar')->name('admin.user.updateAvatar');
       
     });
  
