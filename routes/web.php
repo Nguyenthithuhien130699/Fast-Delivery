@@ -40,5 +40,13 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Backend', 'middleware' => ['a
         Route::post('update-avatar/{id}', 'UserController@updateAvatar')->name('admin.user.updateAvatar');
       
     });
+    Route::group(['prefix' => 'province'], function () {
+        Route::get('/', 'ProvinceController@index')->name('admin.province.index');
+        Route::post('create', 'ProvinceController@create')->name('admin.province.create');
+        Route::get('edit/{id}', 'ProvinceController@edit')->name('admin.province.edit');
+        Route::get('delete/{id}', 'ProvinceController@delete')->name('admin.province.delete');
+        Route::post('update/{id}', 'ProvinceController@update')->name('admin.province.update');
+
  
+});
 });

@@ -30,7 +30,7 @@
     </li>
         <li class="menu-header">Location</li>
         <li class="menu-header">Location</li>
-        <li><a class="nav-link" href=""><i data-feather="sliders"></i><span>Thành phố</span></a></li>
+        <li><a class="nav-link" href="{{route('admin.province.index')}}"><i data-feather="sliders"></i><span>Thành phố</span></a></li>
         <li><a class="nav-link" href=""><i data-feather="sliders"></i><span>Quận - Huyện</span></a></li>
         <li><a class="nav-link" href=""><i data-feather="sliders"></i><span>Phường - Xã</span></a></li>
     @endif
