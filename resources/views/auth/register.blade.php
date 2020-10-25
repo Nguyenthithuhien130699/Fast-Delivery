@@ -9,7 +9,7 @@
     <script>
         function changeRole() {
             var role = $('#role').val();
-            var url_default = '{{route('register')}}';
+            var url_default = '{{route("register")}}';
             if (role){
                 url = url_default+'?role='+role;
             }else {
