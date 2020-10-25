@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from www.radixtouch.in/templates/admin/otika/source/light/profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 02 Dec 2019 15:14:21 GMT -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Admin</title>
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="assets/css/app.min.css">
+  <link rel="stylesheet" href="assets/bundles/bootstrap-social/bootstrap-social.css">
+  <link rel="stylesheet" href="assets/bundles/summernote/summernote-bs4.css">
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <!-- Custom style CSS -->
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
+</head>
+
+<body>
+  <div class="loader"></div>
+  <div id="app">
+    <div class="main-wrapper main-wrapper-1">
+      <div class="navbar-bg"></div>
+      <nav class="navbar navbar-expand-lg main-navbar sticky">
+        <ul class="navbar-nav navbar-right" style="position: relative; left: 1150px;">
+          <li class="dropdown"><a href="#" data-toggle="dropdown"
+              class="nav-link dropdown-toggle nav-link-lg nav-link-user"> <img alt="image" src="./images/avatar.jpg"
+                class="user-img-radious-style"> <span class="d-sm-none d-lg-inline-block"></span></a>
+            <div class="dropdown-menu dropdown-menu-right pullDown">
+              <div class="dropdown-title">Hello Phúc Huỳnh</div>
+              <a href="profile.html" class="dropdown-item has-icon"> <i class="far
+										fa-user"></i> Profile
+                <div class="dropdown-divider"></div>
+                <a href="./login.html" class="dropdown-item has-icon text-danger"> <i
+                    class="fas fa-sign-out-alt"></i>
+                  Đăng xuất
+                </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <div class="main-sidebar sidebar-style-2">
+        <aside id="sidebar-wrapper">
+          <div class="sidebar-brand">
+            <a href="index.html"> <img alt="image" src="assets/img/logo.png" class="header-logo" /> <span
+                class="logo-name">GHN</span>
+            </a>
+          </div>
+          <ul class="sidebar-menu">
+            <li class="menu-header">Main</li>
+            <li class="dropdown active">
+              <a href="index.html" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
+            </li>
+            <li class="menu-header">Bill</li>
+            <li class="dropdown">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="copy"></i><span>Đơn hàng</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="./danhsachdonhang.html">Danh sách</a></li>
+              </ul>
+            </li>
+            <li class="menu-header">User</li>
+            <li class="dropdown">
+              <a href="./taomoi.html" class="nav-link has-dropdown"><i data-feather="layout"></i><span>Tạo mới</span></a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="grid"></i><span>Thành
+                  viên</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="basic-table.html">Người gởi</a></li>
+                <li><a class="nav-link" href="advance-table.html">Người nhận</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                  data-feather="pie-chart"></i><span>Shipper</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="chart-amchart.html">Danh sách</a></li>
+              </ul>
+            </li>
+            <li class="menu-header">Location</li>
+            <li class="dropdown">
+              <a href="#" class="nav-link has-dropdown"><i data-feather="image"></i><span>Thành phố</span></a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="nav-link has-dropdown"><i data-feather="flag"></i><span>Quận - Huyên</span></a>
+            </li>
+            <li><a class="nav-link" href="timeline.html"><i data-feather="sliders"></i><span>Xã</span></a></li>
+            <li class="menu-header">Report</li>
+            <li class="dropdown">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="map"></i><span>Báo cáo - Thống
+                  kê</span></a>
+            </li>
+          </ul>
+        </aside>
+      </div>
+      <!-- Main Content -->
+      <div class="main-content">
+        <section class="section">
+          <div class="section-body">
+            <div class="row mt-sm-4">
+              <div class="col-12 col-md-12 col-lg-4">
+                <div class="card author-box">
+                  <div class="card-body">
+                    <div class="author-box-center">
+                      <img alt="image" src="./images/avatar.jpg" class="rounded-circle author-box-picture">
+                      <div class="clearfix"></div>
+                      <div class="author-box-name">
+                        <a href="#">Phúc Huỳnh</a>
+                      </div>
+                      <div class="author-box-job">Web Developer</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header">
+                    <h4>Thông tin cá nhân</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="py-4">
+                      <p class="clearfix">
+                        <span class="float-left">
+                          Ngày sinh
+                        </span>
+                        <span class="float-right text-muted">
+                          10-05-1999
+                        </span>
+                      </p>
+                      <p class="clearfix">
+                        <span class="float-left">
+                          Phone
+                        </span>
+                        <span class="float-right text-muted">
+                          0969876343
+                        </span>
+                      </p>
+                      <p class="clearfix">
+                        <span class="float-left">
+                          Mail
+                        </span>
+                        <span class="float-right text-muted">
+                          huuphuc@gmail.com
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header">
+                    <h4>Ghi chú</h4>
+                  </div>
+                  <div class="card-body">
+                    <p>Phúc đẹp trai</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-12 col-lg-8">
+                <div class="card">
+                  <div class="padding-20">
+                    <ul class="nav nav-tabs" id="myTab2" role="tablist">
+                      <li class="nav-item">
+                        <a class="nav-link active" id="home-tab2" data-toggle="tab" href="#about" role="tab"
+                          aria-selected="true">Đổi thông tin cá nhân</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="profile-tab2" data-toggle="tab" href="#settings" role="tab"
+                          aria-selected="false">Đổi mật khẩu</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="profile-tab3" data-toggle="tab" href="#avatars" role="tab"
+                          aria-selected="false">Đổi avatar</a>
+                      </li>
+                    </ul>
+                    <div class="tab-content tab-bordered" id="myTab3Content">
+                      <div class="tab-pane fade show active" id="about" role="tabpanel" aria-labelledby="home-tab2">
+                        <form method="post" class="needs-validation" action="">
+                          <input type="hidden" name="_token" value="ZlZe7ENjJ7pNa932n1bhetxFcX7lyfj3Kx1B8psX">
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="form-group col-md-6 col-12">
+                                <label>Tên</label>
+                                <input type="text" class="form-control" value="Phúc Huỳnh" name="name" required>
+                                <div class="invalid-feedback">
+                                  Vui lòng điền đầy đủ tên
+                                </div>
+                              </div>
+                              <div class="form-group col-md-6 col-12">
+                                <label>Điện thoại</label>
+                                <input type="number" class="form-control" value="0969876343" name="phone" maxlength="10"
+                                  minlength="10">
+                              </div>
+                              <div class="form-group col-md-12 col-12">
+                                <label>Email</label>
+                                <input type="email" class="form-control" value="admin@ghn.com" name="email" required>
+                                <div class="invalid-feedback">
+                                  Vui lòng điền đầy đủ Email
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="form-group col-md-6 col-12">
+                                <label>Ngày sinh</label>
+                                <input type="date" class="form-control" value="1999-05-10" name="birthday">
+                              </div>
+                              <div class="form-group col-md-6 col-12">
+                                <label>Giới tính</label>
+                                <select class="form-control" name="gender">
+                                  <option value="male">Nam</option>
+                                  <option value="female">Nữ</option>
+                                  <option value="other" selected>Khác</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="form-group col-md-6 col-12">
+                                <label>Quyền</label>
+                                <select class="form-control" name="role" id="role" disabled>
+                                  <option value="admin" selected>Admin</option>
+                                  <option value="staff">Nhân viên</option>
+                                  <option value="customer">Khách</option>
+                                  <option value="seller">Người bán</option>
+                                </select>
+                              </div>
+                              <div class="form-group col-md-6 col-12">
+                                <label>Trạng thái</label>
+                                <select class="form-control" name="status">
+                                  <option value="disable">Vô hiệu hóa</option>
+                                  <option value="enable" selected>Hoạt động</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="form-group col-12">
+                                <label>Ghi chú</label>
+                                <textarea class="form-control" name="description">Phúc đẹp trai</textarea>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="form-group col-12">
+                                <label>Địa chỉ</label>
+                                <textarea class="form-control" name="address">Tam Kỳ - Quảng Nam</textarea>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card-footer text-right">
+                            <button class="btn btn-primary">Cập nhật</button>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="profile-tab2">
+                        <form method="post" class="needs-validation" action="">
+                          <input type="hidden" name="_token" value="ZlZe7ENjJ7pNa932n1bhetxFcX7lyfj3Kx1B8psX">
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="form-group col-md-6 col-12">
+                                <label>Mật khẩu</label>
+                                <input type="password" class="form-control" name="password">
+                                <div class="invalid-feedback">
+                                  Vui lòng điền đầy đủ mật khẩu
+                                </div>
+                              </div>
+                              <div class="form-group col-md-6 col-12">
+                                <label>Xác thực mật khẩu</label>
+                                <input type="password" class="form-control" name="password_confirmation">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card-footer text-right">
+                            <button class="btn btn-primary">Cập nhật mật khẩu</button>
+                          </div>
+                        </form>
+                      </div>
+
+                      <div class="tab-pane fade" id="avatars" role="tabpanel" aria-labelledby="profile-tab3">
+                        <form method="post" class="needs-validation" enctype="multipart/form-data" action="">
+                          <input type="hidden" name="_token" value="ZlZe7ENjJ7pNa932n1bhetxFcX7lyfj3Kx1B8psX">
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="form-group col-md-6 col-12">
+                                <label>Avatar</label>
+                                <input type="file" class="form-control" name="avatar">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card-footer text-right">
+                            <button class="btn btn-primary">Cập nhật avatar</button>
+                          </div>
+                        </form>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="settingSidebar">
+          <a href="javascript:void(0)" class="settingPanelToggle"> <i class="fa fa-spin fa-cog"></i>
+          </a>
+          <div class="settingSidebar-body ps-container ps-theme-default">
+            <div class=" fade show active">
+              <div class="setting-panel-header">Setting Panel
+              </div>
+              <div class="p-15 border-bottom">
+                <h6 class="font-medium m-b-10">Select Layout</h6>
+                <div class="selectgroup layout-color w-50">
+                  <label class="selectgroup-item">
+                    <input type="radio" name="value" value="1" class="selectgroup-input-radio select-layout" checked>
+                    <span class="selectgroup-button">Light</span>
+                  </label>
+                  <label class="selectgroup-item">
+                    <input type="radio" name="value" value="2" class="selectgroup-input-radio select-layout">
+                    <span class="selectgroup-button">Dark</span>
+                  </label>
+                </div>
+              </div>
+              <div class="p-15 border-bottom">
+                <h6 class="font-medium m-b-10">Sidebar Color</h6>
+                <div class="selectgroup selectgroup-pills sidebar-color">
+                  <label class="selectgroup-item">
+                    <input type="radio" name="icon-input" value="1" class="selectgroup-input select-sidebar">
+                    <span class="selectgroup-button selectgroup-button-icon" data-toggle="tooltip"
+                      data-original-title="Light Sidebar"><i class="fas fa-sun"></i></span>
+                  </label>
+                  <label class="selectgroup-item">
+                    <input type="radio" name="icon-input" value="2" class="selectgroup-input select-sidebar" checked>
+                    <span class="selectgroup-button selectgroup-button-icon" data-toggle="tooltip"
+                      data-original-title="Dark Sidebar"><i class="fas fa-moon"></i></span>
+                  </label>
+                </div>
+              </div>
+              <div class="p-15 border-bottom">
+                <h6 class="font-medium m-b-10">Color Theme</h6>
+                <div class="theme-setting-options">
+                  <ul class="choose-theme list-unstyled mb-0">
+                    <li title="white" class="active">
+                      <div class="white"></div>
+                    </li>
+                    <li title="cyan">
+                      <div class="cyan"></div>
+                    </li>
+                    <li title="black">
+                      <div class="black"></div>
+                    </li>
+                    <li title="purple">
+                      <div class="purple"></div>
+                    </li>
+                    <li title="orange">
+                      <div class="orange"></div>
+                    </li>
+                    <li title="green">
+                      <div class="green"></div>
+                    </li>
+                    <li title="red">
+                      <div class="red"></div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="p-15 border-bottom">
+                <div class="theme-setting-options">
+                  <label class="m-b-0">
+                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
+                      id="mini_sidebar_setting">
+                    <span class="custom-switch-indicator"></span>
+                    <span class="control-label p-l-10">Mini Sidebar</span>
+                  </label>
+                </div>
+              </div>
+              <div class="p-15 border-bottom">
+                <div class="theme-setting-options">
+                  <label class="m-b-0">
+                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
+                      id="sticky_header_setting">
+                    <span class="custom-switch-indicator"></span>
+                    <span class="control-label p-l-10">Sticky Header</span>
+                  </label>
+                </div>
+              </div>
+              <div class="mt-4 mb-4 p-3 align-center rt-sidebar-last-ele">
+                <a href="#" class="btn btn-icon icon-left btn-primary btn-restore-theme">
+                  <i class="fas fa-undo"></i> Restore Default
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="main-footer">
+        <div class="footer-left">
+           &copy; 2020 <div class="bullet"></div> Design By <a href="#">GHN</a>
+        </div>
+        <div class="footer-right">
+        </div>
+      </footer>
+    </div>
+  </div>
+  <!-- General JS Scripts -->
+  <script src="assets/js/app.min.js"></script>
+  <!-- JS Libraies -->
+  <script src="assets/bundles/summernote/summernote-bs4.js"></script>
+  <!-- Page Specific JS File -->
+  <!-- Template JS File -->
+  <script src="assets/js/scripts.js"></script>
+  <!-- Custom JS File -->
+  <script src="assets/js/custom.js"></script>
+</body>
+
+
+<!-- Mirrored from www.radixtouch.in/templates/admin/otika/source/light/profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 02 Dec 2019 15:14:22 GMT -->
+
+</html>

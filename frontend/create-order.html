@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create-order</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/gird.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="./fonts/fontawesome-free-5.12.1/css/all.min.css">
+    <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap&subset=vietnamese" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <div class="grid wide">
+                <nav class="header__navbar">
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item">
+                            <a href="" class="header__navbar-link header__navbar-item--boid">GHN</a>
+                        </li>
+                    </ul>
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item">
+                            <a href="" class="header__navbar-link">Trang chủ</a>
+                        </li>
+                        <li class="header__navbar-item">
+                            <a href="" class="header__navbar-link">Tạo đơn</a>
+                        </li>
+                        <li class="header__navbar-item">
+                            <a href="" class="header__navbar-link">Tra cứu vận đơn</a>
+                        </li>
+                        <!-- <li class="header__navbar-item">
+                            <a href="" class="header__navbar-link">Đăng nhập</a>
+                        </li>
+                        <li class="header__navbar-item">
+                            <a href="" class="header__navbar-link">Đăng ký</a>
+                        </li> -->
+                        <li class="header__navbar-item">
+                            <a href="" class="header__navbar-link">Đơn hàng</a>
+                        </li>
+                        <li class="header__navbar-item header__navbar-user">
+                            <img src="./images/avatar.jpg" alt="" class="header__navbar-user-img">
+                            <a href="./admin.html" class="header__navbar-link">Phúc huỳnh</a>
+                        </li>
+                        <li class="header__navbar-item">
+                            <a href="" class="header__navbar-link">Đăng xuất</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="grid wide">
+            <div class="creat-order">
+                <div class="create-order__heading">
+                    <h2 class="create-order__heading-title">Tạo Vận Đơn</h2>
+                </div>
+
+                <div class="app__content">
+                    <div class="col l-3 app__content-left">
+                        <nav class="category">
+                            <h3 class="category__heading">Thông tin người gửi</h3>
+                        </nav>
+                        <div class="category__name">
+                            <span>Tên: </span>
+                            <a href="" class="category__name-sender">nguoigoi</a>
+                        </div>
+                        <div class="category__name">
+                            <span>Email: </span>
+                            <a href="" class="category__name-sender">nguoigoi@gmail.com</a>
+                        </div>
+                        <div class="category__name">
+                            <span>Điện thoại: </span>
+                            <a href="" class="category__name-sender">0912345678</a>
+                        </div>
+                        <div class="category__name">
+                            <span>Địa chỉ: </span>
+                        </div>
+                    </div>
+
+                    <div class="col l-8 app__content-right" style="display:flex; justify-content: space-between; align-items: center;">
+                        <div class="app__content-right-one">
+                            <nav class="category">
+                                <h3 class="category__heading1">Thông tin người nhận</h3>
+                            </nav>
+                            <div class="auth-form__group">
+                                <input type="text" class="auth-form__input2" placeholder="Tên người nhận">
+                            </div>
+                            <div class="auth-form_form1">
+                                <div class="auth-form__group">
+                                    <input type="text" class="auth-form__input1" placeholder="Email">
+                                </div>
+                                <div class="auth-form__group">
+                                    <input type="text" class="auth-form__input1" placeholder="Điện thoại">
+                                </div>
+                            </div>
+                            <div class="auth-form_form1">
+                                <div class="auth-form__group">
+                                    <input type="text" class="auth-form__input1" placeholder="Giá đơn">
+                                </div>
+                                <div class="auth-form__group">
+                                    <input type="text" class="auth-form__input1" placeholder="Phí ship">
+                                </div>
+                            </div>
+    
+                            <div class="select-location">
+                                <div class="select-input">
+                                    <span class="select-input__label">Đà nẵng</span>
+                                    <i class="select-input__icon fas fa-chevron-down"></i>
+        
+                                    <!-- List options -->
+                                    <ul class="select-input__list">
+                                        <li class="select-input__item">
+                                            <a href="" class="select-input__link">Quảng nam</a>
+                                        </li>
+                                        <li class="select-input__item">
+                                            <a href="" class="select-input__link">Huế</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="select-input">
+                                    <span class="select-input__label">Hải Châu</span>
+                                    <i class="select-input__icon fas fa-chevron-down"></i>
+        
+                                    <!-- List options -->
+                                    <ul class="select-input__list">
+                                        <li class="select-input__item">
+                                            <a href="" class="select-input__link">Cẩm Lệ</a>
+                                        </li>
+                                        <li class="select-input__item">
+                                            <a href="" class="select-input__link">Thanh Khê</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="select-input">
+                                    <span class="select-input__label">Thạc Gián</span>
+                                    <i class="select-input__icon fas fa-chevron-down"></i>
+        
+                                    <!-- List options -->
+                                    <ul class="select-input__list">
+                                        <li class="select-input__item">
+                                            <a href="" class="select-input__link">Hải Châu 2</a>
+                                        </li>
+                                        <li class="select-input__item">
+                                            <a href="" class="select-input__link">Hòa An</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="app__content-right-two">
+                            <div class="auth-form__group">
+                                <input type="text" class="auth-form__input3" placeholder="Địa chỉ" style="height:68px;">
+                            </div>
+                            <div class="auth-form__group">
+                                <input type="text" class="auth-form__input3" placeholder="Ghi chú" style="height:68px;">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image ghn -->
+        <div class="img-ghn">
+            <img src="./images/img_ghn.jpg" alt="" width="100%">
+        </div>
+
+        <footer class="footer">
+            <div class="grid wide footer__content">
+                <div class="row">
+                    <div class="col l-3 m-4 c-6">
+                        <h3 class="footer__heading">CÔNG TY CPDV GIAO HÀNG NHANH</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Công ty giao nhận đầu tiên tại Việt Nam được thành lập với sứ mệnh phục vụ nhu cầu vận chuyển chuyên nghiệp của các đối tác Thương mại điện tử trên toàn quốc.</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col l-3 m-4 c-6">
+                        <h3 class="footer__heading">INFO</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Huỳnh Hữu Phúc</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Trụ sở chính: Tam Kỳ, Quảng Nam</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col l-3 m-4 c-6">
+                        <h3 class="footer__heading">EMAIL</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Email: huynhhuuphuc@ghn.vn</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col l-3 m-4 c-6">
+                        <h3 class="footer__heading">ĐIỆN THOẠI</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Hotline: 1234 5678</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
