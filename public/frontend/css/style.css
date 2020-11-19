@@ -676,7 +676,7 @@ h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5 {
     color: #fff !important;
     display: inline-block;
     text-decoration: none !important;
-    font-size: large;
+    font-size: larger;
 }
 
 .site-navbar .site-navigation .site-menu > li > a:hover {

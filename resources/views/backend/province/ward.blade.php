@@ -14,13 +14,13 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3>Danh Sách Quận Huyện</h3>
+                    <h3>Danh Sách Phường Xã</h3>
                 </div>
                 <div class="card-body">
                     <div class="row">
                         <nav aria-label="breadcrumb" class="col-md-4">
                             <ol class="breadcrumb bg-white text-danger-all">
-                                <li class="breadcrumb-item"><a href="{{route('admin.province.ward')}}"><i >( {{count($data)}}</i> ) Quận Huyện</a></li>
+                                <li class="breadcrumb-item"><a href="{{route('admin.province.ward')}}"><i >( {{count($data)}}</i> ) Phường xã</a></li>
                             </ol>
                         </nav>
                     </div>

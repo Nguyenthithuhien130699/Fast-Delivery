@@ -64,5 +64,72 @@ class UserController extends Controller
         return back()->with($type,$message);
 
     }
-   
+    public function postUpdate(Request $request,$id){
+        $params = $request->all();
+        unset($params['_token']);
+        $update = $this->update($params,$id);
+
+        if ($update){
+            $type = 'success';
+            $message = 'Cập nhật thành công';
+        }else{
+            $type = 'error';
+            $message = 'Cập nhật thất bại';
+        }
+
+        return back()->with($type,$message);
+    }
+
+    public function update($params,$id){
+        $info = User::findOrFail($id);
+        return $info->update($params);
+    }
+    public function updatePassword(UpdatePassword $request,$id){
+        $info = User::findOrFail($id);
+        $password = $request->get('password');
+        $password = bcrypt($password);
+        $info->password = $password;
+        if ($info->save()){
+            $type = 'success';
+            $message = 'Cập nhật mật khẩu thành công';
+        }
+        else{
+            $type = 'error';
+            $message = 'Cập nhật mật khẩu thất bại';
+        }
+        return back()->with($type,$message);
+    }
+    public function updateAvatar(UpdateAvatar  $request,$id ){
+        $info = User::findOrFail($id);
+        $oldAvatar = $info['avatar'];
+        $file = $request->file('avatar');
+        $avatar = $this->uploadFile($file);
+        $info->avatar = $avatar;
+
+        if ($info->save()){
+            if ($oldAvatar != null) $this->deleteFile($oldAvatar);
+            $type = 'success';
+            $message = 'Cập nhật avatar thành công';
+        }
+        else{
+            $type = 'error';
+            $message = 'Cập nhật avatar thất bại';
+        }
+        return back()->with($type,$message);
+
+    }
+    public function delete($id){
+        $info = User::findOrFail($id);
+        if ($info->delete()){
+            Bill::where('seller_id',$id)->delete();
+            $type = 'success';
+            $message = 'Xóa thành công';
+        }
+        else{
+            $type = 'error';
+            $message = 'Xóa thất bại';
+        }
+        return back()->with($type,$message);
+
+    }
 }

@@ -76,7 +76,7 @@
         </div>
     </header>
     <div class="ftco-blocks-cover-1">
-        <div class="ftco-cover-1 innerpage" style="background-image: url('{{asset('frontend/images/slide_2.png')}}')">
+        <div class="ftco-cover-1 innerpage" style="background-image: url('{{asset("frontend/images/slide_2.png")}}')">
 
         </div>
     </div>
@@ -104,8 +104,8 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <h2 class="footer-heading mb-4">INFO</h2>
-                            <p>Lương Ngọc Duy</p>
-                            <P>Trụ sở chính: Hải Minh, Hải Hậu, Nam Định</P>
+                            <p>Fast delivery website</p>
+                            <P>Trụ sở chính: Quận Liên Chiểu, Tp.Đà Nẵng</P>
                         </div>
                         <div class="col-lg-3">
                             <h2 class="footer-heading mb-4">EMAIL</h2>
