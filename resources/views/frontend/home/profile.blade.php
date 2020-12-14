@@ -20,7 +20,7 @@
                                     <div class="author-box-job">
                                         @if($info['role'] == 'admin')
                                             Admin
-                                        @elseif($info['role'] == 'staff')
+                                        @elseif($info['role'] == 'shipper')
                                             Nhân viên
                                         @else
                                             Khách hàng
@@ -32,7 +32,7 @@
                         </div>
                         <div class="card">
                             <div class="card-header">
-                                <h4>Info</h4>
+                                <h4>Information</h4>
                             </div>
                             <div class="card-body">
                                 <div class="py-4">
@@ -54,7 +54,7 @@
                                     </p>
                                     <p class="clearfix">
                         <span class="float-left">
-                          Mail
+                          Email
                         </span>
                                         <span class="float-right text-muted">
                          {{$info['email']}}
@@ -152,8 +152,8 @@
                                                             <label>Quyền</label>
                                                             <select class="form-control" name="role">
                                                                 <option value="admin" {{$info['role'] == 'admin' ? 'selected' : ''}}>Admin</option>
-                                                                <option value="staff" {{$info['role'] == 'staff' ? 'selected' : ''}}>Shipper</option>
-                                                                <option value="customer" {{$info['role'] == 'customer' ? 'selected' : ''}}>Khách hàng</option>
+                                                                <option value="staff" {{$info['role'] == 'shipper' ? 'selected' : ''}}>Shipper</option>
+                                                                <option value="customer" {{$info['role'] == 'receiver' ? 'selected' : ''}}>Khách hàng</option>
                                                             </select>
                                                         </div>
                                                         <div class="form-group col-md-6 col-12">

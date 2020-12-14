@@ -27,7 +27,7 @@
                                 <th>Email</th>
                                 <th>Điện thoại</th>
                                 <th>Giới tính</th>
-                                @if(Auth::user()->role != 'customer')
+                                @if(Auth::user()->role != 'receiver')
                                     <th>Quyền</th>
                                 @endif
                                 <th>Trạng thái</th>
@@ -60,11 +60,11 @@
                                                     Khác
                                                 @endif
                                             </td>
-                                            @if(Auth::user()->role != 'customer')
+                                            @if(Auth::user()->role != 'receiver')
                                                 <td>
                                                     @if($item['role'] == 'admin')
                                                         <div class="badge badge-danger badge-shadow">Admin</div>
-                                                        @elseif($item['role'] == 'staff')
+                                                        @elseif($item['role'] == 'shipper')
                                                             <div class="badge badge-success badge-shadow">Shipper</div>
                                                     @else
                                                         <div class="badge badge-primary badge-shadow">Khách hàng</div>

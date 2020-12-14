@@ -28,11 +28,11 @@
                             <div class="author-box-job">
                                 @if($info['role'] == 'admin')
                                     Admin
-                                @elseif($info['role'] == 'staff')
+                                @elseif($info['role'] == 'shipper')
                                     Shipper
-                                @elseif($info['role'] == 'customer')
+                                @elseif($info['role'] == 'receiver')
                                     Người nhận hàng
-                                @elseif($info['role'] == 'seller')
+                                @elseif($info['role'] == 'sender')
                                     Người bán hàng
                                 @endif
 
@@ -42,7 +42,7 @@
                 </div>
                 <div class="card">
                     <div class="card-header">
-                        <h4>Info</h4>
+                        <h4>Information</h4>
                     </div>
                     <div class="card-body">
                         <div class="py-4">
@@ -64,9 +64,9 @@
                             </p>
                             <p class="clearfix">
                         <span class="float-left">
-                          Mail
+                          Email
                         </span>
-                                <span class="float-right text-muted">
+                        <span class="float-right text-muted" >
                          {{$info['email']}}
                         </span>
                             </p>
@@ -86,7 +86,7 @@
                           </a>
                         </span>
                             </p>
-                            @if(auth()->user()->role == 'staff')
+                            @if(auth()->user()->role == 'shipper')
                             <p class="clearfix">
                         <span class="float-left">
                           Đơn vị vận chuyển
@@ -148,7 +148,7 @@
                                             </div>
                                             <div class="form-group col-md-12 col-12">
                                                 <label>Email</label>
-                                                <input type="email" class="form-control" value="{{$info['email']}}" name="email" required>
+                                                <input type="email" class="form-control" value="{{$info['email']}}" name="email" required disabled>
                                                 <div class="invalid-feedback">
                                                     Vui lòng điền đầy đủ Email
                                                 </div>
@@ -174,9 +174,9 @@
                                                 <label>Quyền</label>
                                                 <select class="form-control" name="role" id="role" disabled>
                                                     <option value="admin" {{$info['role'] == 'admin' ? 'selected' : ''}}>Admin</option>
-                                                    <option value="staff" {{$info['role'] == 'staff' ? 'selected' : ''}}>Shipper</option>
-                                                    <option value="customer" {{$info['role'] == 'customer' ? 'selected' : ''}}>Người nhận hàng</option>
-                                                    <option value="seller" {{$info['role'] == 'seller' ? 'selected' : ''}}>Người bán hàng</option>
+                                                    <option value="staff" {{$info['role'] == 'shipper' ? 'selected' : ''}}>Shipper</option>
+                                                    <option value="customer" {{$info['role'] == 'receiver' ? 'selected' : ''}}>Người nhận hàng</option>
+                                                    <option value="seller" {{$info['role'] == 'sender' ? 'selected' : ''}}>Người bán hàng</option>
                                                 </select>
                                             </div>
                                             <div class="form-group col-md-6 col-12">
@@ -186,7 +186,7 @@
                                                     <option value="enable" {{$info['status'] == 'enable' ? 'selected' : ''}}>Hoạt động</option>
                                                 </select>
                                             </div>
-                                            @if($info['role'] == 'staff')
+                                            @if($info['role'] == 'shipper')
                                             <div class="form-group col-md-12">
                                                 <label>Đơn vị vận chuyển</label>
                                                 <select class="form-control" name="transport_id">
@@ -215,7 +215,11 @@
 
                                         @if(Auth::user()->role == 'admin')
                                             <button class="btn btn-primary" >Cập nhật</button>
-                                        @elseif(Auth::user()->role == 'staff' && Auth::user()->id == $info['id'] )
+                                        @elseif(Auth::user()->role == 'shipper' && Auth::user()->id == $info['id'] )
+                                            <button class="btn btn-primary" >Cập nhật</button>
+                                        @elseif(Auth::user()->role == 'sender' && Auth::user()->id == $info['id'] )
+                                            <button class="btn btn-primary" >Cập nhật</button>
+                                        @elseif(Auth::user()->role == 'receiver' && Auth::user()->id == $info['id'] )
                                             <button class="btn btn-primary" >Cập nhật</button>
                                         @else
                                             <button class="btn btn-primary" disabled >Bạn không có quyền Cập nhật</button>
@@ -245,7 +249,11 @@
                                     <div class="card-footer text-right">
                                         @if(Auth::user()->role == 'admin')
                                             <button class="btn btn-primary" >Cập nhật mật khẩu</button>
-                                        @elseif(Auth::user()->role == 'staff' && Auth::user()->id == $info['id'] )
+                                        @elseif(Auth::user()->role == 'shipper' && Auth::user()->id == $info['id'] )
+                                            <button class="btn btn-primary" >Cập nhật mật khẩu</button>
+                                        @elseif(Auth::user()->role == 'sender' && Auth::user()->id == $info['id'] )
+                                            <button class="btn btn-primary" >Cập nhật mật khẩu</button>
+                                        @elseif(Auth::user()->role == 'receiver' && Auth::user()->id == $info['id'] )
                                             <button class="btn btn-primary" >Cập nhật mật khẩu</button>
                                         @else
                                             <button class="btn btn-primary" disabled >Bạn không có quyền Cập nhật mật khẩu</button>
@@ -268,7 +276,11 @@
                                     <div class="card-footer text-right">
                                         @if(Auth::user()->role == 'admin')
                                             <button class="btn btn-primary" >Cập nhật avatar</button>
-                                        @elseif(Auth::user()->role == 'staff' && Auth::user()->id == $info['id'] )
+                                        @elseif(Auth::user()->role == 'shipper' && Auth::user()->id == $info['id'] )
+                                            <button class="btn btn-primary" >Cập nhật avatar</button>
+                                        @elseif(Auth::user()->role == 'sender' && Auth::user()->id == $info['id'] )
+                                            <button class="btn btn-primary" >Cập nhật avatar</button>
+                                        @elseif(Auth::user()->role == 'receiver' && Auth::user()->id == $info['id'] )
                                             <button class="btn btn-primary" >Cập nhật avatar</button>
                                         @else
                                             <button class="btn btn-primary" disabled >Bạn không có quyền Cập nhật avatar</button>

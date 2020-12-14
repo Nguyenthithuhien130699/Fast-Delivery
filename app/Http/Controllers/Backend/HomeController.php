@@ -10,13 +10,13 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
-        $customers = User::where('role','customer')->count();
-        $staffs = User::where('role','staff')->count();
+        $customers = User::where('role','receiver')->count();
+        $staffs = User::where('role','shipper')->count();
         $params['status']  = 'new';
         $data = $this->getBill($params);
         $new_bills = $data->count();
 
-        if (auth()->user()->role == 'staff'){
+        if (auth()->user()->role == 'shipper'){
             $params['staff_id'] = auth()->id();
         }
         $params['status']  = 'running';

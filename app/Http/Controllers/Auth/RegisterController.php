@@ -74,7 +74,7 @@ class RegisterController extends Controller
             'address'=> $data['address'],
             'password' => Hash::make($data['password']),
             'avatar' => $avatar,
-            'role' => isset($data['role']) ? $data['role'] : 'customer',
+            'role' => isset($data['role']) ? $data['role'] : 'receiver',
             'transport_id' => isset($data['transport_id']) ? $data['transport_id'] : 1
         ]);
     }

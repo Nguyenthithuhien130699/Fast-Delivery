@@ -36,7 +36,8 @@ Route::group(['namespace' => 'Frontend'],function (){
 
 });
 
-Route::group(['prefix'=>'admin','namespace' => 'Backend','middleware' => ['auth','check_role']],function (){
+//,'middleware' => ['auth','check_role']
+Route::group(['prefix'=>'admin','namespace' => 'Backend'],function (){
     Route::get('/', 'HomeController@index')->name('home');
     Route::group(['prefix'=>'bill'],function (){
         Route::get('/', 'BillController@index')->name('admin.bill.index');

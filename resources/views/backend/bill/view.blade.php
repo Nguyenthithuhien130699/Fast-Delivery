@@ -150,7 +150,7 @@
                                             </div>
                                             <div class="text-md-right" style="margin-top:200px">
 
-                                                @if(auth()->user()->role == 'staff')
+                                                @if(auth()->user()->role == 'shipper')
                                                     @if($info['status'] == 'running')
                                                     <a href="{{route('admin.bill.status',['id'=> $info['id'],'status'=> 'done'])}}" class="btn btn-success btn-icon icon-left m-b-5"><i class="fas fa-check"></i> Xác nhận gửi</a>
                                                     <a href="{{route('admin.bill.status',['id'=> $info['id'],'status'=> 'error'])}}" class="btn btn-danger btn-icon icon-left m-b-5"><i class="fas fa-times"></i> Khách hủy/bùng hàng</a>

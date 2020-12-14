@@ -133,6 +133,12 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'email' => [
+            'unique' => 'Email đã được sử dụng',
+        ],
+        'password' => [
+            'min' => '8 ký tự trở lên',
+        ],
     ],
 
     /*

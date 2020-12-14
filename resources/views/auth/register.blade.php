@@ -25,7 +25,7 @@
             <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2">
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h4>Register</h4>
+                        <h4>Đăng Ký Tài Khoản</h4>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{route('register')}}" enctype="multipart/form-data">
@@ -34,13 +34,13 @@
                                 <div class="form-group col-6">
                                     <label  class="d-block">Quyền</label>
                                     <select class="form-control" name="role" id="role" onchange="changeRole()">
-                                        <option value="customer" @if(request('role') == 'customer') selected @endif>Người nhận hàng</option>
-                                        <option value="seller" @if(request('role') == 'seller') selected @endif>Người bán hàng</option>
+                                        <option value="customer" @if(request('role') == 'receiver') selected @endif>Người nhận hàng</option>
+                                        <option value="seller" @if(request('role') == 'sender') selected @endif>Người bán hàng</option>
 
                                     </select>
                                 </div>
                                 {{--<div class="form-group col-6">--}}
-                                    {{--@if(request('role') == 'staff')--}}
+                                    {{--@if(request('role') == 'shipper')--}}
                                         {{--<label  class="d-block">Đơn vị vận chuyển</label>--}}
                                         {{--<select class="form-control" name="transport_id" >--}}
                                             {{--<?php--}}
@@ -55,7 +55,7 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-6">
-                                    <label for="frist_name">Name</label>
+                                    <label for="frist_name">Họ và tên</label>
                                     <input id="frist_name" type="text" class="form-control" name="name" value="{{ old('name') }}" autofocus required>
                                     @error('name')
                                     <span class="text-danger" role="alert">
@@ -87,8 +87,8 @@
                             <div class="row">
                                 <div class="form-group col-6">
                                     <label for="phone" class="d-block">Điện thoại</label>
-                                    <input id="phone" type="text" class="form-control"
-                                           name="phone">
+                                    <input id="phone" type="number" class="form-control"
+                                           name="phone" onfocusout="checkPhone()">
                                     @error('phone')
                                     <span class="text-danger" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -128,7 +128,7 @@
 
                             {{--<div class="form-group">--}}
                                 {{--<div class="custom-control custom-checkbox">--}}
-                                    {{--<label class="custom-control-label" for="agree">I agree with the terms and conditions</label>--}}
+                                    {{--<label class="custom-control-label" for="agree">Tôi đồng ý với các điều khoản và điều kiện</label>--}}
                                 {{--</div>--}}
                             {{--</div>--}}
                             <div class="form-group">
@@ -146,3 +146,18 @@
         </div>
     </div>
 @endsection
+
+<script>
+    function checkPhone(){
+        var vnf_regex = /((09|03|07|08|05)+([0-9]{8})\b)/g;
+        var mobile = $('#phone').val();
+        if(mobile !==''){
+            if (vnf_regex.test(mobile) == false)
+            {
+                alert('Số điện thoại của bạn không đúng định dạng!');
+            }
+        }else{
+            alert('Bạn chưa điền số điện thoại!');
+        }
+    }
+</script>

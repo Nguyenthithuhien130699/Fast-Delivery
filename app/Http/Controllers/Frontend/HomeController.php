@@ -46,7 +46,7 @@ class HomeController extends Controller
            'phone' => $params['phone'],
            'password' => bcrypt('abcd1234'),
        ];
-       $customer = User::where('role','customer')->updateOrCreate($find,$update);
+       $customer = User::where('role','receiver')->updateOrCreate($find,$update);
        $customer_id = $customer->id;
         $input= [
             'from' =>auth()->user()->address,

@@ -15,7 +15,7 @@ class CheckRole
      */
     public function handle($request, Closure $next)
     {
-        if (auth()->user() &&  in_array(auth()->user()->role,['customer','seller']) ) {
+        if (auth()->user() &&  in_array(auth()->user()->role,['receiver','sender']) ) {
             return redirect()->route('index');
         }
         return $next($request);

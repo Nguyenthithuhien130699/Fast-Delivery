@@ -154,7 +154,7 @@
                     </div>
                 </div>
             </div>
-            @elseif(auth()->user()->role == 'staff')
+            @elseif(auth()->user()->role == 'shipper')
                 <div class="card">
                     <div class="card-header">
                         <h4>Đơn hàng chờ nhận</h4>

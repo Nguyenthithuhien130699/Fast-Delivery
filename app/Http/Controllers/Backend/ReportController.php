@@ -20,13 +20,13 @@ class ReportController extends Controller
         }
         $date = [$from,$to];
         $params['date'] = $date;
-        $customers = User::where('role','customer')->whereBetween('created_at',$date)->count();
-        $staffs = User::where('role','staff')->whereBetween('created_at',$date)->count();
+        $customers = User::where('role','receiver')->whereBetween('created_at',$date)->count();
+        $staffs = User::where('role','shipper')->whereBetween('created_at',$date)->count();
         $params['status']  = 'new';
         $data = $this->getBill($params);
         $new_bills = $data->count();
 
-        if (auth()->user()->role == 'staff'){
+        if (auth()->user()->role == 'shipper'){
             $params['staff_id'] = auth()->id();
         }
         $params['status']  = 'running';

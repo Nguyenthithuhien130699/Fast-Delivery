@@ -56,6 +56,8 @@
                         @include('frontend.home.status.waitting')
                         @include('frontend.home.status.running')
                         @include('frontend.home.status.done')
+                    @else
+                       <h1 style="margin-left: 410px; color: red">Đơn hàng đã bị hủy</h1>  
                     @endif
                 </div>
             </div>
@@ -137,6 +139,18 @@
                                     @endif
                                 </address>
                                 @endif
+                            </div>
+                            <div class="col-md-4">
+                                <address>
+                                    <strong>Ngày gửi:</strong><br>
+                                    {{$bill_info['send_date']}}
+                                </address>
+                            </div>
+                            <div class="col-md-4">
+                                <address>
+                                    <strong>Ngày nhận:</strong><br>
+                                    {{$bill_info['receive_date']}}
+                                </address>
                             </div>
                         </div>
                     </div>

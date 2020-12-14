@@ -75,11 +75,17 @@
             </div>
         </div>
     </header>
-    <div class="ftco-blocks-cover-1">
-        <div class="ftco-cover-1 innerpage" style="background-image: url('{{asset("frontend/images/slide_2.png")}}')">
 
+    @if(\Route::currentRouteName() == 'createBill' || \Route::currentRouteName() == 'search' || \Route::currentRouteName() == 'listBill')
+        <div class="ftco-blocks-cover-1">
+            <div class="ftco-cover-1 innerpage" style="background-image: url('{{asset("frontend/images/slide_2.png")}}');height: 50px;min-height: 119px;"></div>
         </div>
-    </div>
+    @else
+        <div class="ftco-blocks-cover-1">
+            <div class="ftco-cover-1 innerpage" style="background-image: url('{{asset("frontend/images/slide_2.png")}}')"></div>
+        </div>
+    @endif
+
     <div class="site-section">
         <div class="container-fluid">
             @include('layouts.components.flash_message')

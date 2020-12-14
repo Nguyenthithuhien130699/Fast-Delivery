@@ -15,16 +15,16 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
     public function index(){
-        $data = User::where('role','customer')->get();
+        $data = User::where('role','receiver')->get();
         return view('backend.user.index',compact('data'));
     }
     public function staffList(){
-        $data = User::where('role','staff')->get();
+        $data = User::where('role','shipper')->get();
         $title = 'Danh Sách Shipper';
         return view('backend.user.index',compact('data','title'));
     }
     public function seller(){
-        $data = User::where('role','seller')->get();
+        $data = User::where('role','sender')->get();
         $title = 'Danh Sách người bán hàng';
         return view('backend.user.index',compact('data','title'));
     }

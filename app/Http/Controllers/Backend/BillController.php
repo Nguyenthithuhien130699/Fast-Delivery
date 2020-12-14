@@ -12,7 +12,7 @@ class BillController extends Controller
 {
     public function index(){
         $params = [];
-        if (in_array(auth()->user()->role,['staff','seller'])){
+        if (in_array(auth()->user()->role,['shipper','sender'])){
             $params['staff_id'] = auth()->id();
         }
         $data = $this->getBill($params);
@@ -26,8 +26,13 @@ class BillController extends Controller
     public function status($id,$status){
        $info = Bill::findOrFail($id);
        $info->status = $status;
+       
         if ($status == 'running'){
+            $info->send_date = date('Y-m-d H:i:s');
             $info->staff_id = auth()->id();
+        }
+        if ($status == 'done') {
+            $info->receive_date = date('Y-m-d H:i:s');
         }
        if ($info->save()){
            $code = 'success';
